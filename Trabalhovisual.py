@@ -1,5 +1,7 @@
 from tkinter import * #biblioteca grafica
 
+
+
 ######## funções ########
 
 def exibirtxt():
@@ -8,12 +10,14 @@ def exibirtxt():
     txt = str (caixa2.get()) # armazenar o texto
     texto3['text'] = nome + ' Disse ' + txt
     
+    texto = Tk.label(texto3, text = f"{nome} diz: {txt}").pack
+
     
 ######## comandos basicos para abrir uma janela ########
 
 janela = Tk()
 janela.title('coletor')
-janela.geometry("155x150")
+janela.geometry("190x150")
 
 ########  texto que vai em cada coisa  ########
 
@@ -22,7 +26,8 @@ caixa = Entry(janela) #coletar informação
 texto2 = Label(janela, text = "digite oque voce quer dizer:") #basicamente texto
 caixa2 = Entry(janela) #coletar informação
 botao = Button(janela, text = "exibir", command = exibirtxt ) #exibir função texto3
-texto3 = Label(janela, text = "" ) #aonde vai exibir
+texto3 = Label(janela, text = "Feito por: Carlos Eduardo Mocinho" ) #aonde vai exibir
+
 
 ######## parte visual e onde vai ficar cada coisa ########
 
