@@ -1,5 +1,44 @@
-def exibir_padrao():
-    for i in range(5):
-        print('*' * (i+1))
+from tkinter import * #biblioteca grafica
+import tkinter as tk
+from tkinter import messagebox
 
-exibir_padrao()
+
+######## funções ########
+
+def exibirtxt():
+    
+    nome = str(caixa.get()) #armazenar o nome
+    txt = str (caixa2.get()) # armazenar o texto
+    texto3['text'] = nome + ' Disse ' + txt
+    
+    texto = tk.Label (texto3, text = f"{nome} diz: {txt}").pack
+    messagebox.showinfo (Message: str texto3)
+    
+######## comandos basicos para abrir uma janela ########
+
+janela = Tk()
+janela.title('coletor')
+janela.geometry("190x150")
+
+########  texto que vai em cada coisa  ########
+
+texto1 = Label(janela, text = "digite o seu nome:") #basicamente texto
+caixa = Entry(janela) #coletar informação
+texto2 = Label(janela, text = "digite oque voce quer dizer:") #basicamente texto
+caixa2 = Entry(janela) #coletar informação
+botao = Button(janela, text = "exibir", command = exibirtxt ) #exibir função texto3
+texto3 = Label(janela, text = "Feito por: Carlos Eduardo Mocinho" ) #aonde vai exibir
+
+
+######## parte visual e onde vai ficar cada coisa ########
+
+texto1.grid()
+caixa.grid()
+texto2.grid()
+caixa2.grid()
+botao.grid()
+texto3.grid()
+
+######## Atualizar a janela quando algo mudar ########
+
+janela.mainloop()
